@@ -42,6 +42,7 @@ exports.protect = catchAsync(async (req, res, next) => {
       user.passwordChangedAt.getTime() / 1000,
       10
     );
+
     if (decoded.iat < changedTimeStamp) {
       return next(
         new AppError('User recently changed password, please login again', 401)
