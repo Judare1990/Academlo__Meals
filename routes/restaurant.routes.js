@@ -33,9 +33,11 @@ router
 router
   .route('/reviews/:id')
   .post(authMiddleware.protect, restaurantController.createReview);
+
+router.use(authMiddleware.protect);
+
 router
   .route('/reviews/restaurantId/:id')
-  .use(authMiddleware.protect)
   .patch(restaurantController.updateReview)
   .delete(restaurantController.deleteReview);
 

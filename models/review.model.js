@@ -23,7 +23,7 @@ const Review = db.define('reviews', {
   },
 
   rating: {
-    type: DataTypes.ENUM(1, 2, 3, 4, 5),
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 });
